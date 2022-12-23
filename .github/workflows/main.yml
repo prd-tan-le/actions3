@@ -15,6 +15,5 @@ jobs:
           echo "Greeting! Greeting!"
         shell: bash
       - name: Dumping Github context
-        uses: actions/checkout@v3
         run: |
           echo '${{ toJSON(github) }}' | jq
