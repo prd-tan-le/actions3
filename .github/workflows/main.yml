@@ -1,0 +1,20 @@
+name: Main workflow
+
+on:
+  push:
+    branches: [main]
+    pull_request: [main]
+  workflow_dispatch:
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greeting fellas
+        run: |
+          echo "Greeting! Greeting!"
+        shell: bash
+      - name: Dumping Github context
+        uses: actions/checkout@v3
+        run: |
+          echo '${{ toJSON(github) }}' | jq
