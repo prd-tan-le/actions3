@@ -1,6 +1,7 @@
-name: Hi
+name: Sub workflow
+
 on:
-  - workflow_dispatch:
+  workflow_dispatch:
 env:
   mascot: Mona
   super_duper_var: totally_awesome
@@ -12,7 +13,7 @@ jobs:
       - run: echo 'Hi ${{ env.mascot }}'
       - run: echo 'Hi ${{ env.mascot }}'
         env:
-          - mascot: Octocat
+          mascot: Octocat
   linux_job:
     runs-on: ubuntu-latest
     env:
